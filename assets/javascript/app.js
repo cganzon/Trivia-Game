@@ -1,15 +1,27 @@
 var qA = [
     {
-        q: "Can red be blue?",
-        a: "No?"
+        q: "Batman is home to what fictional city?",
+        name: "one",
+        options: ["Metropolis", "Gotham", "Midvale"],
+        a: "Gotham"
     },
     {
-        q: "How many wheels does a bicycle have?",
-        a: "I agree"
+        q: "Which of these superheroes is not from the DC universe?",
+        name: "two",
+        options: ["The Flash", "Wonder Woman", "Deadpool"],
+        a: "Deadpool"
     },
     {
-        q: "Is water wet?",
-        a: "Sometimes"
+        q: "What is Supergirl's birth name?",
+        name: "three",
+        options: ["Kara Danvers", "Kara Zor-El", "Kara El-Zor"],
+        a: "Kara Zor-El"
+    },
+    {
+        q: "Who is the original Spider Man?",
+        name: "four",
+        options: ["Peter Parker", "Miles Morales", "Ben Reilly"],
+        a: "Peter Parker"
     },
 ];
 var correct = 0;
@@ -19,6 +31,9 @@ var counter = 30;
 // Declaring interval variable and
 var interval;
 
+// Hides Done! button initially
+$("#done").hide();
+
 // When the user clicks the start button, the timer starts
 $("#start").on("click", run);
 $("#done").on("click", done);
@@ -27,11 +42,15 @@ $("#done").on("click", done);
 function run() {
     clearInterval(interval);
     interval = setInterval(decrement, 1000);
-    $("#hidden").empty();
-    $("#hidden").html('<p>Time remaining: <span id="timer">30</span> seconds</p>');
+    $("#questions").empty();
+    $("#questions").html('<p>Time remaining: <span id="timer">30</span> seconds</p>');
     for (var i = 0; i < qA.length; i++) {
-    $("#hidden").append("<p>" + qA[i].q + "</p>");
+        $("#questions").append("<p>" + qA[i].q + "</p>");
+            $("#questions").append('<input type="radio" name=' + qA[i].name + ' value=' + qA[i].options[0] + '> ' + qA[i].options[0]);
+            $("#questions").append('<input type="radio" name=' + qA[i].name + ' value=' + qA[i].options[1] + '> ' + qA[i].options[1]);
+            $("#questions").append('<input type="radio" name=' + qA[i].name + ' value=' + qA[i].options[2] + '> ' + qA[i].options[2]);
     }
+    $("#done").show();
 }
 
 function decrement() {
@@ -40,17 +59,18 @@ function decrement() {
     if (counter === 0) {
         done();
         alert("Time's Up!");
-    }     
+    }
 }
 
 function done() {
     clearInterval(interval);
     counter = 30;
+    $("#done").hide();
     $("#timer").text(counter);
-    $("#hidden").empty();
-    $("#hidden").append("<p> Correct: " + correct + "</p>");
-    $("#hidden").append("<p> Incorrect: " + incorrect + "</p>");
-    $("#hidden").append("<p> Unanswered: " + unanswered + "</p>");
+    $("#questions").empty();
+    $("#questions").append("<p> Correct: " + correct + "</p>");
+    $("#questions").append("<p> Incorrect: " + incorrect + "</p>");
+    $("#questions").append("<p> Unanswered: " + unanswered + "</p>");
 }
 
 

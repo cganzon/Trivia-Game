@@ -8,6 +8,8 @@
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
     <!-- Separate CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -15,70 +17,76 @@
 </head>
 
 <body>
-    <h1>Totally Trivial Trivia!</h1>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Totally Trivial Trivia!</h1>
 
-    <button id="start">Start!</button>
+            <button id="start">Start!</button>
 
-    <div id="timerBox"></div>
+            <div id="timerBox"></div>
 
-    <div id="questions">
-        <p>Batman is home to what fictional city?</p>
-        <label for="Metropolis">
-            <input type="radio" name="one" value="Metropolis"> Metropolis
-        </label>
-        <label for="Gotham">
-            <input type="radio" name="one" value="Gotham"> Gotham
-        </label>
-        <label for="Midvale">
-            <input type="radio" name="one" value="Midvale"> Midvale
-        </label>
+            <div id="scores"></div>
 
-        <p>Which of these superheroes is not from the DC universe?</p>
-        <label for="The Flash">
-            <input type="radio" name="two" value="The Flash"> The Flash
-        </label>
-        <label for="Wonder Woman">
-            <input type="radio" name="two" value="Wonder Woman"> Wonder Woman
-        </label>
-        <label for="Deadpool">
-            <input type="radio" name="two" value="Deadpool"> Deadpool
-        </label>
+            <div id="questions">
+                <p>Batman is home to what fictional city?</p>
+                <label for="Metropolis">
+                    <input type="radio" class="options" name="one" value="Metropolis"> Metropolis
+                </label>
+                <label for="Gotham">
+                    <input type="radio" class="options" name="one" value="Gotham"> Gotham
+                </label>
+                <label for="Midvale">
+                    <input type="radio" class="options" name="one" value="Midvale"> Midvale
+                </label>
 
-        <p>What is Supergirl's birth name?</p>
-        <label for="Kara Danvers">
-            <input type="radio" name="three" value="Kara Danvers"> Kara Danvers
-        </label>
-        <label for="Kara Zor-El">
-            <input type="radio" name="three" value="Kara Zor-El"> Kara Zor-El
-        </label>
-        <label for="Kara El-Zor">
-            <input type="radio" name="three" value="Kara El-Zor"> Kara El-Zor
-        </label>
+                <p>Which of these superheroes is not from the DC universe?</p>
+                <label for="The Flash">
+                    <input type="radio" class="options" name="two" value="The Flash"> The Flash
+                </label>
+                <label for="Wonder Woman">
+                    <input type="radio" class="options" name="two" value="Wonder Woman"> Wonder Woman
+                </label>
+                <label for="Deadpool">
+                    <input type="radio" class="options" name="two" value="Deadpool"> Deadpool
+                </label>
 
-        <p>Who is the original Spider Man?</p>
-        <label for="Peter Parker">
-            <input type="radio" name="four" value="Peter Parker"> Peter Parker
-        </label>
-        <label for="Miles Morales">
-            <input type="radio" name="four" value="Miles Morales"> Miles Morales
-        </label>
-        <label for="Ben Reilly">
-            <input type="radio" name="four" value="Ben Reilly"> Ben Reilly
-        </label>
+                <p>What is Supergirl's birth name?</p>
+                <label for="Kara Danvers">
+                    <input type="radio" class="options" name="three" value="Kara Danvers"> Kara Danvers
+                </label>
+                <label for="Kara Zor-El">
+                    <input type="radio" class="options" name="three" value="Kara Zor-El"> Kara Zor-El
+                </label>
+                <label for="Kara El-Zor">
+                    <input type="radio" class="options" name="three" value="Kara El-Zor"> Kara El-Zor
+                </label>
 
-        <p>Which superhero gains his power from a ring?</p>
-        <label for="The Hulk">
-            <input type="radio" name="five" value="The Hulk"> The Hulk
-        </label>
-        <label for="Green Lantern">
-            <input type="radio" name="five" value="Green Lantern"> Green Lantern
-        </label>
-        <label for="Hawkeye">
-            <input type="radio" name="five" value="Hawkeye"> Hawkeye
-        </label>
+                <p>Who is the original Spider Man?</p>
+                <label for="Peter Parker">
+                    <input type="radio" class="options" name="four" value="Peter Parker"> Peter Parker
+                </label>
+                <label for="Miles Morales">
+                    <input type="radio" class="options" name="four" value="Miles Morales"> Miles Morales
+                </label>
+                <label for="Ben Reilly">
+                    <input type="radio" class="options" name="four" value="Ben Reilly"> Ben Reilly
+                </label>
+
+                <p>Which superhero gains their powers from a ring?</p>
+                <label for="The Hulk">
+                    <input type="radio" class="options" name="five" value="The Hulk"> The Hulk
+                </label>
+                <label for="Green Lantern">
+                    <input type="radio" class="options" name="five" value="Green Lantern"> Green Lantern
+                </label>
+                <label for="Hawkeye">
+                    <input type="radio" class="options" name="five" value="Hawkeye"> Hawkeye
+                </label>
+            </div>
+
+            <button id="done">Done!</button>
+        </div>
     </div>
-
-    <button id="done">Done!</button>
 
 
 

@@ -1,4 +1,25 @@
-var answers = ["Gotham", "Deadpool", "Kara Zor-El", "Peter Parker", "Green Lantern"];
+var answers = [
+    {
+        question: "one",
+        answer: "Gotham"
+    },
+    {
+        question: "two",
+        answer: "Deadpool"
+    },
+    {
+        question: "three",
+        answer: "Kara Zor-El"
+    },
+    {
+        question: "four",
+        answer: "Peter Parker"
+    },
+    {
+        question: "five",
+        answer: "Green Lantern"
+    }
+];
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
@@ -37,6 +58,8 @@ function decrement() {
 function done() {
     clearInterval(interval);
     counter = 30;
+    $("#start").hide();
+    $("#timerBox").hide();
     $("#done").hide();
     $("#timer").text(counter);
     $("#questions").empty();
@@ -45,7 +68,25 @@ function done() {
     $("#questions").append("<p> Unanswered: " + unanswered + "</p>");
 }
 
-// Function to check user's answers with answers array
+// Checks user's answers with answers array
+$(document).on("click", ".options", function () {
+    for (var i = 0; i < answers.length; i++) {
+        // Checking if the name attribute html matches question property in answers array
+        if (this.name === answers[i].question) {
+            console.log("Question " + this.name);
+            if (this.value === answers[i].answer) {
+                console.log("Correct!");
+                correct++;
+            } else {
+                console.log("Wrong!");
+                incorrect++;
+            }
+            unanswered = answers.length - (correct + incorrect);
+            console.log("Unsanswered " + unanswered);
+        }
+    }
+});
 
+// Note: above code to check answers only works as expected if user only selects one option per question. The click function must be changed since it increments the scores each time an option is clicked. If a user changes options multple times for one question, the scores will change each time. Also, the unanswered questions can go into  the negatives with how I have the code wriiten. This will be updated in the future.
 
 

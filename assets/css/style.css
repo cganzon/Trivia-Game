@@ -1,0 +1,32 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    background: url("../images/8315.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+label {
+    font-size: 30px;
+}
+
+.jumbotron {
+    background: white;
+    border: 20px solid black;
+    border-radius: 20px;
+    margin-top: 100px;
+}
+
+#timerBox {
+    font-size: 50px;
+}
+
+#questions {
+    font-size: 40px;
+}
+
